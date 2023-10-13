@@ -1,0 +1,47 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+// void bubblesort(int *arr,int n){
+    
+//     for(int i=0;i<n;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(arr[i]>arr[j]){
+//                 swap(arr[i],arr[j]);
+//             }
+            
+            
+            
+//         }
+//     }
+    
+// }
+void selectionsort(int *arr,int n){
+    for(int i=0;i<n-1;i++){
+        int min=i;
+        for(int j=i;j<n;j++){
+            if(arr[j]<arr[min]){
+                min=j;
+            }
+        }
+        if(min!=i){
+            swap(arr[min],arr[i]);
+        }
+        
+    }
+}
+int main() {
+    // Write C++ code here
+    // cout << "Hello world!";
+    
+    int arr[]={2,1,5,3};
+    int size=4;
+    selectionsort(arr,size);
+    for(auto i:arr){
+        cout<<i;
+    }
+    
+
+    return 0;
+}
